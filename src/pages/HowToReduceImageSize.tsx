@@ -35,24 +35,16 @@ export default function HowToReduceImageSize() {
         },
         {
           title: 'Step 1 — Reduce File Size',
-          content: `Use the image compressor tool to match the required size: https://www.imagekb.online/compress-image`
+          content: `Use an image compressor to reduce your photo to the required KB size before uploading.`
         },
         {
           title: 'Step 2 — Fix Dimensions',
-          content: `Many forms require exact width and height. Resize your image here: https://www.imagekb.online/resize-image`
+          content: `Many forms require exact width and height, so resizing is necessary to avoid rejection.`
         },
         {
           title: 'Step 3 — Adjust DPI',
-          content: `Some portals require 300 DPI. Fix DPI using: https://www.imagekb.online/change-dpi`
+          content: `Some portals require specific DPI such as 300 DPI for proper clarity and acceptance.`
         },
-        {
-          title: 'Fix Signature Upload Errors',
-          content: `Resize signatures properly: https://www.imagekb.online/signature-resizer`
-        },
-        {
-          title: 'Remove Background if Required',
-          content: `Create clean passport style photos: https://www.imagekb.online/remove-background`
-        }
       ]}
     >
       <div className="max-w-3xl mx-auto space-y-6 text-base leading-7">
@@ -79,6 +71,16 @@ export default function HowToReduceImageSize() {
           Almost every upload rejection happens due to size, dimensions or DPI mismatch.
           Fix them in order — compress, resize, then adjust DPI — and your photo will upload successfully.
         </p>
+
+        {/* INTERNAL LINKS FOR GOOGLE TRUST */}
+        <h2 className="text-2xl font-semibold">Tools You Can Use</h2>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><a href="/compress-image" className="text-blue-600 underline">Compress Image to Required KB</a></li>
+          <li><a href="/resize-image" className="text-blue-600 underline">Resize Image Dimensions</a></li>
+          <li><a href="/change-dpi" className="text-blue-600 underline">Change Image DPI</a></li>
+          <li><a href="/signature-resizer" className="text-blue-600 underline">Resize Signature</a></li>
+          <li><a href="/remove-background" className="text-blue-600 underline">Remove Background</a></li>
+        </ul>
 
       </div>
     </ToolPageLayout>
