@@ -80,6 +80,12 @@ export default function HowToReduceImageSize() {
           <li><a href="/change-dpi" className="text-blue-600 underline">Change Image DPI</a></li>
           <li><a href="/signature-resizer" className="text-blue-600 underline">Resize Signature</a></li>
           <li><a href="/remove-background" className="text-blue-600 underline">Remove Background</a></li>
+          <li><a href="/jpg-to-png" className="text-blue-600 underline">JPG to PNG</a></li>
+          <li><a href="/png-to-jpg" className="text-blue-600 underline">PNG to JPG</a></li>
+          <li><a href="/webp-to-jpg" className="text-blue-600 underline">WebP to JPG Converter</a></li>
+          <li><a href="/passport-photo-maker" className="text-blue-600 underline">Passport Size Photo Maker</a></li>
+          <li><a href="/image-to-pdf" className="text-blue-600 underline">Convert Image to PDF</a></li>
+          <li><a href="/compress-pdf" className="text-blue-600 underline">PDF Compressor — Reduce PDF File Size</a></li>
         </ul>
 
       </div>
