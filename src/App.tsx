@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
 import { lazy, Suspense } from "react";
 import { ScrollToTop } from "./components/ScrollToTop";
+import HowToReduceImageSize from "./pages/HowToReduceImageSize";
 
 const Index = lazy(() => import("./pages/Index"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -63,6 +64,7 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
+              <Route path="/how-to-reduce-image-size" element={<HowToReduceImageSize />} />
               
               <Route path="*" element={<NotFound />} />
             </Routes>

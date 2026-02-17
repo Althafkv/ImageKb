@@ -7,6 +7,8 @@ import { tools } from '@/lib/toolsData';
 import { preloadAllRoutes } from '@/lib/routePreloader';
 import { Search, Shield, Zap, Wifi } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { Link } from 'react-router-dom';
+
 
 const features = [
   { icon: Zap, title: 'Lightning Fast', desc: 'Process images instantly in your browser' },
@@ -105,6 +107,22 @@ export default function Index() {
       </section>
 
       <AdPlaceholder position="bottom" />
+      <section className="mt-16 border-t border-border/50">
+  <div className="container mx-auto px-4 py-12">
+    <div className="max-w-3xl mx-auto text-center">
+      <h2 className="text-2xl md:text-3xl font-bold mb-4">
+        Having trouble uploading photo to online forms?
+      </h2>
+      <p className="text-muted-foreground leading-relaxed mb-6">
+        Many government and official websites reject photos due to file size limits, incorrect DPI settings, or wrong dimensions. Whether you're applying for a passport, visa, exam form, or any official document — getting the right image specifications can be frustrating. Understanding how to reduce image size in KB, adjust DPI, and resize dimensions is essential for a smooth upload experience.
+      </p>
+      <Link to="/how-to-reduce-image-size" className="text-primary hover:underline font-medium">
+        Learn how to reduce image size for online forms →
+      </Link>
+    </div>
+  </div>
+</section>
+
     </Layout>
   );
 }
