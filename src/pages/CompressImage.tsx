@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 import ToolPageLayout from '@/components/ToolPageLayout';
 import FileUploader from '@/components/FileUploader';
 import { useImageTool } from '@/hooks/useImageTool';
@@ -25,39 +26,37 @@ export default function CompressImage() {
         'Click "Compress Image" and download the optimized result.',
       ]}
       faqs={[
-        { question: 'How does image compression work?', answer: 'Our tool iteratively adjusts JPEG compression quality and, if needed, scales down the image dimensions to reach your target file size while preserving as much visual quality as possible.' },
-        { question: 'Can I compress to a specific KB size?', answer: 'Yes! Use the slider to set any target size from 10 KB to 2000 KB. The compressor will optimize the image to be at or below your target.' },
-        { question: 'Will compression ruin my image quality?', answer: 'We use an intelligent algorithm that prioritizes quality reduction over dimension scaling. For reasonable target sizes, the quality difference is minimal.' },
-        { question: 'What formats are supported?', answer: 'You can upload JPG, PNG, or WebP images. The output is always in JPEG format for optimal compression.' },
-        { question: 'Is there a file size limit for uploads?', answer: 'No upload limit since everything is processed locally. Performance depends on your device but most images compress in seconds.' },
+        { question: 'How does image compression work?', answer: 'Our tool adjusts image quality and dimensions automatically to reach your selected file size while preserving clarity.' },
+        { question: 'Can I compress image to 50KB or 100KB?', answer: 'Yes, simply choose the required KB value using the slider and download the optimized result.' },
+        { question: 'Will compression ruin quality?', answer: 'No, the algorithm minimizes visible quality loss while reducing file size.' },
+        { question: 'Is it safe?', answer: 'Yes. All processing happens locally in your browser and files never upload to servers.' },
+        { question: 'Works on mobile?', answer: 'Yes it works on Android, iPhone, tablet and desktop browsers.' },
+        { question: 'What formats supported?', answer: 'JPG, PNG and WebP supported. Output is optimized JPEG.' },
+        { question: 'Can I use for government exam forms?', answer: 'Yes, perfect for passport, PSC, SSC, UPSC and job applications requiring small file size.' },
+        { question: 'Does it work offline?', answer: 'After loading page, compression works even without internet.' },
       ]}
       contentSections={[
         {
           title: 'Why Compress Images?',
-          content: `Large image files can cause problems when uploading to websites, sending via email, or meeting platform-specific size requirements. Many online forms, job applications, and government portals require images under a specific file size — often 100 KB, 200 KB, or 500 KB.
-
-Our image compressor lets you target a specific file size in KB, ensuring your images meet any requirement. Unlike simple quality sliders, our tool intelligently balances quality reduction and dimension scaling to achieve the target size with minimal visible quality loss.
-
-Common use cases include compressing photos for email attachments, reducing image sizes for faster website loading, preparing images for online applications, and optimizing profile pictures for social media platforms.`,
-        },
-        {
-          title: 'Smart Compression Technology',
-          content: `Our compression algorithm works in steps. First, it attempts to reach the target size by reducing JPEG compression quality. If quality reduction alone is insufficient, the algorithm gradually reduces the image dimensions while maintaining the aspect ratio.
-
-This approach ensures that your image retains the highest possible quality at the target file size. A photo compressed to 200 KB, for example, will look significantly better with our approach compared to simply setting a low JPEG quality value.
-
-The entire process runs in your browser using the Canvas API and JPEG encoder. No data is sent to any server, making this the most private image compression tool available. The tool works offline after loading and processes images in seconds.`,
+          content: `Modern smartphone photos are very high resolution and large in size. Many websites and forms restrict upload size to small limits such as 50KB, 100KB or 200KB. Without compression your image upload fails. This tool solves that instantly by optimizing size automatically.`,
         },
       ]}
     >
+
       <div className="max-w-2xl mx-auto space-y-6">
+
+        <p className="text-muted-foreground text-center">
+          Compress images online to an exact KB size instantly. Perfect for job applications,
+          government forms, websites and email attachments.
+        </p>
+
         <FileUploader accept="image/*" onFilesSelected={handleFileSelect} file={file} onClear={reset} />
 
         {file && !processedBlob && (
           <div className="space-y-4">
             {originalPreview && (
               <div className="rounded-xl overflow-hidden border bg-card p-2">
-                <img src={originalPreview} alt="Original" className="max-h-72 mx-auto object-contain" />
+                <img src={originalPreview} alt="Original uploaded image preview before compression" className="max-h-72 mx-auto object-contain" />
               </div>
             )}
             <p className="text-sm text-muted-foreground text-center">Original: {formatFileSize(file.size)}</p>
@@ -76,21 +75,59 @@ The entire process runs in your browser using the Canvas API and JPEG encoder. N
         {processedBlob && (
           <div className="space-y-4">
             <div className="rounded-xl overflow-hidden border bg-card p-2">
-              <img src={processedPreview} alt="Compressed" className="max-h-72 mx-auto object-contain" />
+              <img src={processedPreview} alt="Compressed optimized image preview after reducing file size" className="max-h-72 mx-auto object-contain" />
             </div>
             <div className="text-center text-sm text-muted-foreground">
-              <p>{formatFileSize(file!.size)} → {formatFileSize(processedBlob.size)}</p>
+              <p>{formatFileSize(file.size)} → {formatFileSize(processedBlob.size)}</p>
               <p className="text-success font-medium">
-                {Math.round((1 - processedBlob.size / file!.size) * 100)}% smaller
+                {Math.round((1 - processedBlob.size / file.size) * 100)}% smaller
               </p>
             </div>
-            <Button onClick={() => download('compressed-' + file!.name.replace(/\.\w+$/, '.jpg'))} className="w-full" size="lg">
+            <Button onClick={() => download('compressed-' + file.name.replace(/\.\w+$/, '.jpg'))} className="w-full" size="lg">
               <Download className="mr-2 h-4 w-4" /> Download Compressed Image
             </Button>
             <Button variant="outline" onClick={reset} className="w-full">Compress Another</Button>
           </div>
         )}
+
       </div>
+
+      {/* SEO CONTENT */}
+      <section className="max-w-3xl mx-auto mt-16 space-y-10 text-base leading-relaxed">
+
+        <div>
+          <h2 className="text-2xl font-bold">How to Compress Image to Exact KB Size</h2>
+          <p>
+            Upload your image, choose required size like 20KB, 50KB, 100KB or 200KB and download instantly.
+            The tool automatically adjusts quality and resolution to match your target size.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold">Common Uses</h2>
+          <ul className="list-disc ml-6 space-y-1">
+            <li>Government job application photos</li>
+            <li>Passport & visa uploads</li>
+            <li>Email attachments</li>
+            <li>Website performance optimization</li>
+            <li>Profile pictures</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="text-2xl font-bold">Related Tools</h2>
+          <ul className="list-disc ml-6 space-y-1">
+            <li><Link to="/resize-image" className="text-primary underline">Resize Image</Link></li>
+            <li><Link to="/jpg-to-png" className="text-primary underline">JPG to PNG Converter</Link></li>
+            <li><Link to="/png-to-jpg" className="text-primary underline">PNG to JPG Converter</Link></li>
+            <li><Link to="/signature-resizer" className="text-primary underline">Signature Resizer</Link></li>
+            <li><Link to="/passport-photo-maker" className="text-primary underline">Passport Photo Maker</Link></li>
+            <li><Link to="/remove-background" className="text-primary underline">Background Remover</Link></li>
+          </ul>
+        </div>
+
+      </section>
+
     </ToolPageLayout>
   );
 }
