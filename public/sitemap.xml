@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://imagekb.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://imagekb.com/jpg-to-png</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/png-to-jpg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/webp-to-jpg</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/compress-image</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/resize-image</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/passport-photo-maker</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/signature-resizer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/image-to-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/compress-pdf</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/change-dpi</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://imagekb.com/about</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://imagekb.com/contact</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://imagekb.com/privacy</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://imagekb.com/terms</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+</urlset>
